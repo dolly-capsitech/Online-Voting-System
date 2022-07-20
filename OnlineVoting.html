@@ -1,0 +1,445 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="bootstrap.min.css" />
+    <link rel="stylesheet" href="OnlineVoting.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+      <a class="navbar-brand" style="color: #2460a7ff">GoForRight</a>
+    </nav>
+    <!-- slider part -->
+    <section class="triangle text-center">
+      <h1 class="fs-1 text-white pt-5" style="text-shadow: 2px 2px 4px #000000">
+        Online Voting System
+      </h1>
+      <!-- qoutes -->
+      <div class="mt-5">
+        <div class="myslide qoutes text-nowrap">
+          <q
+            >We all have to vote like our lives and the world depend on it,<br />
+            because they do. The only way to be certain the future to <br />
+            make it ourselves.</q
+          >
+          <p>— John Lewis</p>
+        </div>
+        <div class="myslide qoutes text-nowrap">
+          <q>
+            Your voices are being heard and you’re proving to our ancestors<br />
+            that their struggles were not in vain. Now we have more thing<br />
+            we need to do to walk in our true power, and that is to vote.
+          </q>
+          <p>— Beyoncé</p>
+        </div>
+        <div class="myslide qoutes text-nowrap">
+          <q>
+            When we vote, our values are put into action and our voices are<br />
+            heard. Your voice is a reminder that you matter because you do,<br />
+            and you deserve to be heard.</q
+          >
+          <p>— Meghan Markle</p>
+        </div>
+      </div>
+      <button class="registerbtn mb-5 mt-3" id="signin">Sign In</button>
+    </section>
+    <!-- About us  -->
+    <div class="container">
+      <h1
+        style="
+          color: #2460a7fe;
+          font-family: 'Faustina', serif;
+          text-shadow: 2px 2px 4px grey;
+          font-size: 50px;
+        "
+        class="mb-5 mt-5 text-center font-weight-bold"
+      >
+        About Us
+      </h1>
+      <div class="row">
+        <div class="col-sm-6 mb-5 card-body">
+          <img src="sub_admin-icon (1).png" style="width: 49px" class="mb-4" />
+          <h5 class="card-title h4" style="color: #2460a7fe">
+            A reliable online voting tool for your group
+          </h5>
+          <p class="card-text" style="color: #85b3d1ff; font-size: 18px">
+            Run online elections among your group for a single important event.
+            Or manage consistent, recurring votes.
+          </p>
+        </div>
+        <div class="col-sm-6 mb-5 card-body">
+          <img src="icon-key.svg" class="mb-4" />
+          <h5 class="card-title h4" style="color: #2460a7fe">
+            Key electronic voting features
+          </h5>
+          <p class="card-text" style="color: #85b3d1ff; font-size: 18px">
+            Never again worry about people voting twice or other forms of vote
+            manipulation. Get results instantly. Dive deeper into vote
+            statistics.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 mb-5 card-body">
+          <img src="icon-admin.svg" class="mb-4" />
+          <h5 class="card-title h4" style="color: #2460a7fe">
+            Flexible implementation options
+          </h5>
+          <p class="card-text" style="color: #85b3d1ff; font-size: 18px">
+            Choose how involved you want to be. Self-administer your vote or let
+            us manage the voting experience.
+          </p>
+        </div>
+        <div class="col-sm-6 mb-5 card-body">
+          <img src="icon-voter.svg" class="mb-4" />
+          <h5 class="card-title h4" style="color: #2460a7fe">
+            A pleasant way to cast votes
+          </h5>
+          <p class="card-text" style="color: #85b3d1ff; font-size: 18px">
+            Your voters deserve a fair and easy to use voting website,
+            accessible from any device.
+          </p>
+        </div>
+      </div>
+      <hr />
+    </div>
+    <!-- Login And Registration Form -->
+    <div class="login-register-container none">
+      <div style="background-color: lightgray" class="p-5">
+        <i class="fa fa-times icon" id="close"></i>
+        <div
+          style="width: 500px; background-color: #f2f2f2; border-radius: 4px"
+          class="shadow"
+        >
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab">
+              <a
+                class="nav-item nav-link active text-color"
+                id="nav-home-tab"
+                data-toggle="tab"
+                href="#nav-home"
+                aria-selected="true"
+                >Log in</a
+              >
+              <a
+                class="nav-item nav-link text-color"
+                id="nav-profile-tab"
+                data-toggle="tab"
+                href="#nav-profile"
+                aria-selected="false"
+                >Register</a
+              >
+            </div>
+          </nav>
+          <!-- Login form -->
+          <div class="tab-content" id="nav-tabContent">
+            <div
+              class="tab-pane show active mx-auto styling"
+              id="nav-home"
+              style="width: 200px"
+            >
+              <form>
+                <label>Email</label> <br />
+                <input type="text" placeholder="Email" id="Username" required />
+                <br />
+                <label>Password</label> <br />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  id="Passcode"
+                  class="mb-3"
+                />
+                <a id="ShowOrHide">
+                  <i class="fa fa-lock show" id="lock" onclick="clickme()"></i>
+                  <i
+                    class="fa fa-unlock hide"
+                    id="unlock"
+                    onclick="clickme()"
+                  ></i>
+                </a>
+                <br />
+                <button class="mb-4 btn" onclick="checkdata()">Login</button>
+              </form>
+            </div>
+            <!-- Registration form -->
+            <div
+              class="tab-pane mx-auto styling"
+              id="nav-profile"
+              style="width: 200px"
+            >
+              <form>
+                <label class="mt-3">Username</label><br />
+                <input
+                  type="text"
+                  placeholder="username"
+                  id="personName"
+                  required
+                /><br />
+                <label>Contact No.</label><br />
+                <input
+                  type="text"
+                  placeholder="contact no."
+                  id="contactNum"
+                  required
+                /><br />
+
+                <label for="">Gender</label> <br />
+                <input
+                  type="radio"
+                  id="gender"
+                  value="Male"
+                  name="identity"
+                  checked="checked"
+                  required
+                />
+                <label for="gender">Male</label>
+                <input
+                  type="radio"
+                  id="gender"
+                  value="Female"
+                  name="identity"
+                  checked="checked"
+                  required
+                />
+                <label for="gender">Female</label>
+                <br />
+
+                <label>Email</label> <br />
+                <input type="text" placeholder="Email" required id="Email" />
+                <br />
+                <label>Password</label> <br />
+                <input
+                  type="password"
+                  placeholder="Password"
+                  required
+                  class="mb-3"
+                  id="password"
+                />
+                <br />
+                <button class="mb-4 btn" onclick="savedata()" type="submit">
+                  Registration
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- doughnut chart -->
+    <div class="container">
+      <p
+        class="text-center pb-5"
+        style="
+          font-size: 50px;
+          color: #2460a7ff;
+          text-shadow: 2px 2px 4px #000000;
+        "
+      >
+        Developer Of The Year
+      </p>
+      <canvas
+        id="myChart"
+        style="width: 100%; max-width: 600px"
+        class="mx-auto"
+      ></canvas>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-light text-center text-white mt-5">
+      <div class="container p-4">
+        <section class="mb-2 mt-3">
+          <a
+            class="btn m-2 px-3 py-2 shadow"
+            style="background-color: #3b5998; border-radius: 55px"
+            ><i class="fa fa-facebook-f"></i
+          ></a>
+          <a
+            class="btn m-2 px-3 py-2 shadow"
+            style="background-color: #55acee; border-radius: 50px"
+            ><i class="fa fa-twitter"></i
+          ></a>
+          <a
+            class="btn m-2 px-3 py-2 shadow"
+            style="background-color: #669db3ff; border-radius: 50px"
+            ><i class="fa fa-instagram"></i
+          ></a>
+          <a
+            class="btn m-2 px-3 py-2 shadow"
+            style="background-color: #333333; border-radius: 50px"
+            ><i class="fa fa-github"></i
+          ></a>
+        </section>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2022 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">Bootstrap.com</a>
+      </div>
+    </footer>
+    <!-- javascript part -->
+    <script>
+      // slider
+      let slide = 0;
+      slideshow();
+      function slideshow() {
+        let i;
+        let para = document.getElementsByClassName("myslide");
+        for (i = 0; i < para.length; i++) {
+          para[i].style.display = "none";
+        }
+        slide++;
+        if (slide > para.length) {
+          slide = 1;
+        }
+        para[slide - 1].style.display = "block";
+        setTimeout(slideshow, 1000);
+      }
+      // registration form
+      function savedata() {
+        let emailid, pswrd, name, phnNum, identifyGender;
+        emailid = document.getElementById("Email").value;
+        pswrd = document.getElementById("password").value;
+        name = document.getElementById("personName").value;
+        phnNum = document.getElementById("contactNum").value;
+        identifyGender = document.querySelector(
+          "input[name=identity]:checked"
+        ).value;
+        if (emailid !== "") {
+          let record = new Array();
+          record = JSON.parse(localStorage.getItem("user"))
+            ? JSON.parse(localStorage.getItem("user"))
+            : [];
+          const filterEmail = record.some((v) => {
+            return v.Email == emailid;
+          });
+          if (filterEmail) {
+            console.log("email", record);
+            alert("Data already eixst");
+          } else {
+            record.push({
+              Email: emailid,
+              password: pswrd,
+              personName: name,
+              contactNum: phnNum,
+              identifyGender: identifyGender,
+            });
+            localStorage.setItem("user", JSON.stringify(record));
+          }
+          window.location.href = "OnlineVoting.html";
+        }
+      }
+      document.getElementById("signin").addEventListener("click", function () {
+        document.querySelector(".none").style.display = "flex";
+      });
+      document.getElementById("close").addEventListener("click", function () {
+        document.querySelector(".none").style.display = "none";
+      });
+      // login form
+      function checkdata() {
+        const welcomeDetails = [];
+        let username = document.getElementById("Username").value;
+        let password = document.getElementById("Passcode").value;
+        let login = JSON.parse(localStorage.getItem("user"));
+        for (let i = 0; i < login.length; i++) {
+          if (username === login[i].Email && password === login[i].password) {
+            alert("Login sucessful");
+            window.open("Candidates.html");
+            let details = JSON.parse(localStorage.getItem("user"));
+            for (let i = 0; i <= details.length; i++) {
+              if (username === details[i].Email) {
+                welcomeDetails.push({
+                  name: details[i].personName,
+                  number: details[i].contactNum,
+                  email: details[i].Email,
+                  password: details[i].password,
+                  genderIdentity: details[i].identifyGender,
+                });
+                localStorage.setItem("welcome", JSON.stringify(welcomeDetails));
+              }
+            }
+            console.log("jkdfhsjk", details);
+            break;
+          }
+        }
+      }
+      // doughnut chart
+      var Values = [
+        "Rajnandani Tejwani",
+        "Taruna Panwar",
+        "Manali Mathur",
+        "Simran Sharma",
+        "Vanshika Mathur",
+      ];
+      const count1 = localStorage.getItem("clickcount1");
+      const count2 = localStorage.getItem("clickcount2");
+      const count3 = localStorage.getItem("clickcount3");
+      const count4 = localStorage.getItem("clickcount4");
+      const count5 = localStorage.getItem("clickcount5");
+      var Value = [count1, count2, count3, count4, count5];
+      // var value=localStorage.getItem("clickcount")
+      var barColors = [
+        "#85B3d1ff",
+        "#b3c7d6ff",
+        "#2b5797",
+        "#d9b48fff",
+        "#669db3ff",
+      ];
+      new Chart("myChart", {
+        type: "doughnut",
+        data: {
+          labels: Values,
+          datasets: [
+            {
+              backgroundColor: barColors,
+              data: Value,
+            },
+          ],
+        },
+      });
+      // login password visiblity
+      var privacy = false;
+      function clickme() {
+        if (privacy) {
+          document.getElementById("Passcode").setAttribute("type", "password");
+          privacy = false;
+        } else {
+          document.getElementById("Passcode").setAttribute("type", "text");
+          privacy = true;
+        }
+        const passwordbutton = document.querySelector("ShowOrHide");
+        const save = document.querySelector("lock");
+        const unsave = document.querySelector("unlock");
+        let visiblity = false;
+        passwordbutton.addEventListener("click", function () {
+          if (visiblity) {
+            save.classList.remove("hide");
+            unsave.classList.add("hide");
+          } else {
+            save.classList.add("hide");
+            unsave.classList.remove("hide");
+          }
+          visiblity = !visiblity;
+        });
+      }
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

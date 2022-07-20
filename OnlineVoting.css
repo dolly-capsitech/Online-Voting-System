@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Parisienne&family=Sawarabi+Mincho&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Faustina:wght@300&family=Parisienne&family=Sawarabi+Mincho&display=swap");
+/* Navigation Bar */
+.navbar-brand {
+  font-family: "Faustina", serif;
+  font-weight: bold;
+}
+/* Background Color */
+.triangle {
+  background: #2460a7ff;
+  position: relative;
+  font-family: "Faustina", serif;
+}
+.triangle::before {
+  content: "";
+  bottom: 0;
+  position: absolute;
+  width: 0;
+  border-style: solid;
+  border-width: 73px 73px 0 73px;
+  border-color: #2460a7ff transparent;
+  left: 9%;
+  transform: translateX(-50%) translateY(100%);
+}
+/* Slider */
+.qoutes {
+  line-height: 40px;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: white;
+}
+/* Login or Register button */
+.registerbtn {
+  color: white;
+  background-color: #2460a7ff;
+  border: 1px solid white;
+  width: 150px;
+  height: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 30px;
+}
+.registerbtn:hover {
+  color: #2460a7ff;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+}
+/* sign in or sign up part */
+.login-register-container {
+  position: absolute;
+  top: 24%;
+  left: 35%;
+  width: 30%;
+  background-color: #ffffff;
+}
+.login-register-container .nav-item {
+  width: 50% !important;
+  text-align: center !important;
+}
+.none {
+  display: none;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.none :hover {
+  cursor: pointer;
+}
+.styling {
+  line-height: 35px;
+}
+div label {
+  font-size: 18px;
+}
+.btn {
+  border-radius: 4px;
+  border: 1px solid white;
+  background-color: #2460a7ff;
+  color: white;
+  margin: auto;
+}
+.btn:hover {
+  outline: none;
+}
+.text-color {
+  color: black;
+}
+.text-color:hover {
+  color: black;
+}
+/* close button */
+.icon {
+  float: right;
+  margin-top: -20px !important;
+  cursor: pointer;
+}
+/* login password */
+.show {
+  cursor: pointer;
+  color: gray;
+  margin-left: -25px;
+}
+.hide {
+  visibility: hidden;
+  position: absolute;
+}

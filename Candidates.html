@@ -1,0 +1,293 @@
+<html>
+  <head>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="Candidates.css" />
+    <!-- Fontawsome Link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      type="text/css"
+    />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="bootstrap.min.css" />
+  </head>
+  <body onload="userDetails()">
+    <!-- Main Div -->
+    <div>
+      <button
+        style="
+          border: none;
+          width: 100px;
+          height: 40px;
+          background-color: transparent;
+          border: 1px solid white;
+          margin-top: 40px;
+          position: fixed;
+          border-radius: 0px 50px 50px 0px;
+        "
+      >
+        <a
+          href="#"
+          class="card-link"
+          style="color: white"
+          onclick="myFunction()"
+          >Logout</a
+        >
+      </button>
+      <!-- Welcome Details -->
+      <div class="d-flex">
+        <div class="col-4 d-flex justify-content-center" style="margin-top: 9%">
+          <div class="card shadow" style="width: 90%; height: 50%">
+            <div class="card-body">
+              <!-- <span class="Profile d-flex justify-content-center mb-4">
+                <i class="fa fa-user-circle-o"></i
+              ></span> -->
+              <h1 class="card-title text-center mb-3" id="welcomeuser">
+                Welcome!
+              </h1>
+              <hr />
+              <div class="card-text">
+                <form>
+                  <label style="font-size: 15px" id="NameId"></label>
+                  <br />
+                  <label style="font-size: 15px" id="PhoneNumber"></label>
+                  <br />
+                  <label style="font-size: 15px" id="Gender"></label>
+                  <br />
+                  <label style="font-size: 15px" id="userId"></label>
+                  <br />
+                  <label style="font-size: 15px" id="Status"
+                    >Status:<span
+                      style="color: red; font: size 15px"
+                      class="voting"
+                      id="voteStatusChange"
+                    >
+                      Not Voted</span
+                    ></label
+                  >
+                  <br />
+                  <hr />
+                  <h4 style="color: #2460a7ff; font-weight: 350" class="mt-4">
+                    <center>
+                      Thank You.!<br />For Being The Part Of Our Organization.
+                    </center>
+                  </h4>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="container">
+            <p class="heading mb-5 mt-3">
+              Our Candidates <i class="fa fa-hand-o-down"></i>
+            </p>
+            <div class="row">
+              <!-- First Candidate -->
+              <div class="card mx-5 mb-5 shadow" style="width: 16rem">
+                <img src="RT.jpg" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Rajnandani Tejwani</h5>
+                  <hr />
+                  <button
+                    class="button-vote activity"
+                    id="check1"
+                    onclick="clickCounter1();changeStatus();"
+                  >
+                    Vote
+                  </button>
+                  <span id="result" class="VoteStatus">Not Voted</span>
+                </div>
+              </div>
+              <!-- Second Candidate -->
+              <div class="card mx-5 mb-5 shadow" style="width: 16rem">
+                <img src="TP.jpg" style="height: 16rem" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Taruna Panwar</h5>
+                  <hr />
+                  <button
+                    class="button-vote activity"
+                    id="check2"
+                    onclick="clickCounter2();changeStatus();"
+                  >
+                    Vote
+                  </button>
+                  <span id="demo2" class="VoteStatus">Not Voted</span>
+                </div>
+              </div>
+              <!-- Third Candidate -->
+              <div class="card mx-5 mb-5 shadow" style="width: 16rem">
+                <img src="m.jpg" style="height: 16rem" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Manali Mathur</h5>
+                  <hr />
+                  <button
+                    class="button-vote activity"
+                    id="check3"
+                    onclick="clickCounter3();changeStatus();"
+                  >
+                    Vote
+                  </button>
+                  <span id="demo3" class="VoteStatus">Not Voted</span>
+                </div>
+              </div>
+              <!-- Fourth Candidate -->
+              <div class="card mx-auto shadow" style="width: 16rem">
+                <img src="SS.jpg" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Simran Sharma</h5>
+                  <hr />
+                  <button
+                    class="button-vote activity"
+                    id="check4"
+                    onclick="clickCounter4();changeStatus();"
+                  >
+                    Vote
+                  </button>
+                  <span id="demo4" class="VoteStatus">Not Voted</span>
+                </div>
+              </div>
+              <!-- Fifth Candidate -->
+              <div class="card mx-auto shadow" style="width: 16rem">
+                <img src="VM.jpg" />
+                <div class="card-body text-center">
+                  <h5 class="card-title">Vanshika Mathur</h5>
+                  <hr />
+                  <button
+                    class="button-vote activity"
+                    id="check5"
+                    onclick="clickCounter5();changeStatus();"
+                  >
+                    Vote
+                  </button>
+                  <span id="demo5" class="VoteStatus">Not Voted</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function changeStatus() {
+        document.getElementById("voteStatusChange").innerHTML =
+          "<span style='color: green;'>Voted</span>";
+      }
+      // Vote For Rajnandani
+      function clickCounter1() {
+        if (typeof Storage !== "undefined") {
+          if (localStorage.clickcount1) {
+            localStorage.clickcount1 = Number(localStorage.clickcount1) + 1;
+          } else {
+            localStorage.clickcount1 = 1;
+          }
+          document.getElementById("result").innerHTML =
+            "<span style='color: green;'>Voted</span>";
+          document.getElementById("check2").disabled = true;
+          document.getElementById("check3").disabled = true;
+          document.getElementById("check4").disabled = true;
+          document.getElementById("check5").disabled = true;
+        }
+      }
+      // Vote For Taruna Panwar
+      function clickCounter2() {
+        if (typeof Storage !== "undefined") {
+          if (localStorage.clickcount2) {
+            localStorage.clickcount2 = Number(localStorage.clickcount2) + 1;
+          } else {
+            localStorage.clickcount2 = 1;
+          }
+          document.getElementById("demo2").innerHTML =
+            "<span style='color: green;'>Voted</span>";
+          document.getElementById("check1").disabled = true;
+          document.getElementById("check3").disabled = true;
+          document.getElementById("check4").disabled = true;
+          document.getElementById("check5").disabled = true;
+        }
+      }
+      // Vote For Manali Mathur
+      function clickCounter3() {
+        if (typeof Storage !== "undefined") {
+          if (localStorage.clickcount3) {
+            localStorage.clickcount3 = Number(localStorage.clickcount3) + 1;
+          } else {
+            localStorage.clickcount3 = 1;
+          }
+          document.getElementById("demo3").innerHTML =
+            "<span style='color: green;'>Voted</span>";
+          document.getElementById("check1").disabled = true;
+          document.getElementById("check2").disabled = true;
+          document.getElementById("check4").disabled = true;
+          document.getElementById("check5").disabled = true;
+        }
+      }
+      // Vote For Simran Sharma
+      function clickCounter4() {
+        if (typeof Storage !== "undefined") {
+          if (localStorage.clickcount4) {
+            localStorage.clickcount4 = Number(localStorage.clickcount4) + 1;
+          } else {
+            localStorage.clickcount4 = 1;
+          }
+          document.getElementById("demo4").innerHTML =
+            "<span style='color: green;'>Voted</span>";
+          document.getElementById("check1").disabled = true;
+          document.getElementById("check2").disabled = true;
+          document.getElementById("check3").disabled = true;
+          document.getElementById("check5").disabled = true;
+        }
+      }
+      // Vote For Vanshika Mathur
+      function clickCounter5() {
+        if (typeof Storage !== "undefined") {
+          if (localStorage.clickcount5) {
+            localStorage.clickcount5 = Number(localStorage.clickcount5) + 1;
+          } else {
+            localStorage.clickcount5 = 1;
+          }
+          document.getElementById("demo5").innerHTML =
+            "<span style='color: green;'>Voted</span>";
+          document.getElementById("check1").disabled = true;
+          document.getElementById("check2").disabled = true;
+          document.getElementById("check3").disabled = true;
+          document.getElementById("check4").disabled = true;
+        }
+      }
+      // To show Welcome Details
+      function userDetails() {
+        let result = JSON.parse(localStorage.getItem("welcome"));
+        document.getElementById("welcomeuser").innerHTML =
+          "Welcome" + " " + result[0].name + "!";
+        document.getElementById("userId").innerHTML =
+          "<span style='font-size:14px;'> Email Id:</span>" +
+          " " +
+          " " +
+          result[0].email;
+        document.getElementById("NameId").innerHTML =
+          "<span style='font-size:14px;'> Name:</span>" +
+          " " +
+          " " +
+          result[0].name;
+        document.getElementById("PhoneNumber").innerHTML =
+          "<span style='font-size:14px;'> Contact No:</span>" +
+          " " +
+          " " +
+          result[0].number;
+        document.getElementById("Gender").innerHTML =
+          "<span style='font-size:14px;'>Gender:</span>" +
+          " " +
+          " " +
+          result[0].genderIdentity;
+      }
+
+      // Logout confirmation
+      function myFunction() {
+        let Logout = confirm("Are You Sure?");
+        if (Logout == true) {
+          window.open("OnlineVoting.html");
+          localStorage.removeItem("welcome");
+        }
+      }
+    </script>
+  </body>
+</html>
